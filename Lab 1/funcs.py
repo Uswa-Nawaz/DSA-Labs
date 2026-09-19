@@ -85,3 +85,21 @@ def sort4(arr):
             arr[i], arr[mini]=arr[mini], arr[i]
 
     return arr
+
+
+# ============================================================
+#                       PROBLEM 5
+# ============================================================
+
+# function to read the string values from the file
+def read_String(filename):
+
+    with open(filename, "r") as file:
+        lines=file.read()
+        return lines
+    
+#function to find the reverse
+def StringReverse(str, starting, ending):
+    sub_Str=str[starting:ending+1]
+    reversed_str=sub_Str[::-1]
+    return reversed_str
