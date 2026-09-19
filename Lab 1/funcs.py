@@ -103,3 +103,22 @@ def StringReverse(str, starting, ending):
     sub_Str=str[starting:ending+1]
     reversed_str=sub_Str[::-1]
     return reversed_str
+
+# ============================================================
+#                       PROBLEM 6
+# ============================================================
+
+def SumIterative(number):
+    digit_sum=0
+    while number>0:
+        lastDigit=number%10
+        number=number//10
+        digit_sum=digit_sum+lastDigit
+
+    return digit_sum
+
+def SumRecursive(number):
+    if number==0:
+        return number
+    else:
+       return (number%10) + SumRecursive(number // 10)
