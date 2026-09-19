@@ -19,11 +19,31 @@ def userInput():
     num=int(input("Enter the no. you want to search: "))
     return num
 
-# search it in the array
+# search in the array
 def SearchA(arr, n):
     #function should return the array of indices
     indices=[]
     for i in range(len(arr)):
         if arr[i]==n:
             indices.append(i)
+    return indices
+
+
+# ============================================================
+#                       PROBLEM 2
+# ============================================================
+
+# search in the array
+def SearchB(arr, n):
+    check=0
+    #function should return the array of indices
+    indices=[]
+    for i in range(len(arr)):
+        check=check+1
+        if arr[i]>n:
+            break
+        if arr[i]==n:
+            indices.append(i)
+
+    print(f"Elements checked: {check}")
     return indices
