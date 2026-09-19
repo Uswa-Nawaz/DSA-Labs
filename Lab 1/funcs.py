@@ -33,6 +33,9 @@ def SearchA(arr, n):
 #                       PROBLEM 2
 # ============================================================
 
+#read_from_subfolder reused in problem 2
+#userInput reused in problem 2
+
 # search in the array
 def SearchB(arr, n):
     check=0
@@ -47,3 +50,22 @@ def SearchB(arr, n):
 
     print(f"Elements checked: {check}")
     return indices
+
+# ============================================================
+#                       PROBLEM 3
+# ============================================================
+
+#read_from_subfolder reused in problem 3
+
+def Minimum(arr, starting, ending):
+    # should return the index of minimum element between the starting and ending slot
+
+    min_index = starting
+    min_value = arr[starting]
+    for i in range(starting+1, ending+1):
+        if arr[i]<min_value:
+            min_value=arr[i]
+            min_index=i
+
+    return min_index
+        
