@@ -68,4 +68,20 @@ def Minimum(arr, starting, ending):
             min_index=i
 
     return min_index
-        
+
+
+# ============================================================
+#                       PROBLEM 4
+# ============================================================
+
+#read_from_subfolder reused in problem 4
+
+def sort4(arr):
+    #should reuse the above function and should return an array that is sorted
+    n=len(arr)
+    for i in range(n-1):
+        mini=Minimum(arr, i, n-1)
+        if mini != i:
+            arr[i], arr[mini]=arr[mini], arr[i]
+
+    return arr
