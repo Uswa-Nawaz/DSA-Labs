@@ -122,3 +122,31 @@ def SumRecursive(number):
         return number
     else:
        return (number%10) + SumRecursive(number // 10)
+
+# ============================================================
+#                       PROBLEM 7
+# ============================================================
+
+def RowWiseSum(Mat):
+    result=[]
+    for row in Mat:
+        row_sum=0
+        for value in row:
+            row_sum=row_sum+value
+
+        result.append(row_sum)
+
+    return result
+
+def ColumnWiseSum(Mat):
+    result = []
+
+    for column in range(len(Mat[0])):
+        col_sum = 0
+
+        for row in range(len(Mat)):
+            col_sum = col_sum + Mat[row][column]
+
+        result.append(col_sum)
+
+    return result
