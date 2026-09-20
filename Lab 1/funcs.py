@@ -150,3 +150,35 @@ def ColumnWiseSum(Mat):
         result.append(col_sum)
 
     return result
+
+# ============================================================
+#                       PROBLEM 8
+# ============================================================
+
+# function should compare the current smallest element of both array one by one
+# pick the smallest one to place the new array
+
+def SortedMerge(Arr1, Arr2):
+    i=0
+    j=0
+
+    merged=[]
+
+    while i<len(Arr1) and j<len(Arr2):
+        if Arr1[i] <= Arr2[j]:
+            merged.append(Arr1[i])
+            i += 1
+        else:
+            merged.append(Arr2[j])
+            j += 1
+
+    while i<len(Arr1):
+        merged.append(Arr1[i])
+        i=i+1
+    
+    while j<len(Arr2):
+        merged.append(Arr2[j])
+        j=j+1
+
+    return merged
+
