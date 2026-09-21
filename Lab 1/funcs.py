@@ -182,3 +182,17 @@ def SortedMerge(Arr1, Arr2):
 
     return merged
 
+# ============================================================
+#                       PROBLEM 9
+# ============================================================
+
+#function should reuse itself (recursion)
+# should be same forward and backward using recursion
+def palindromeRecursion(str):
+    if len(str)<=1:
+        return True
+    if str[0]!=str[-1]:
+        return False
+
+    return palindromeRecursion(str[1:-1])
+
