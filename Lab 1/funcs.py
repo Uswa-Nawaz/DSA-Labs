@@ -196,3 +196,37 @@ def palindromeRecursion(str):
 
     return palindromeRecursion(str[1:-1])
 
+
+# ============================================================
+#                       PROBLEM 10
+# ============================================================
+
+def Sort10(Arr):
+    # Sort the array in standard ascending order
+    Arr.sort()
+
+    negatives = []
+    positives = []
+    for num in Arr:
+        if num < 0:
+            negatives.append(num)
+        else:
+            positives.append(num)
+
+    # Combine them alternatively
+    result = []
+
+    neg_index = 0
+    pos_index = 0
+    
+    while neg_index < len(negatives) and pos_index < len(positives):
+        result.append(negatives[neg_index])
+        result.append(positives[pos_index])
+        neg_index += 1
+        pos_index += 1
+
+    result.extend(negatives[neg_index:])
+    result.extend(positives[pos_index:])
+    
+    return result
+    
