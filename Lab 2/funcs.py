@@ -25,7 +25,7 @@ def InsertionSort(array, start, end):
 
 
 # ============================================================
-#                       PROBLEM 2
+#                       PROBLEM 3
 # ============================================================
 
 def Merge(array, p, q, r):
@@ -62,4 +62,22 @@ def MergeSort(array, start, end):
     mid = (start + end) // 2
     MergeSort(array, start, mid)
     MergeSort(array, mid, end)
+    Merge(array, start, mid, end)
+
+# ============================================================
+#                       PROBLEM 4
+# ============================================================
+
+THRESHOLD = 50
+
+def HybridMergeSort(array, start, end):
+    # Small piece, insertion sort is faster, so use it and stop splitting
+    if end - start <= THRESHOLD:
+        InsertionSort(array, start, end)
+        return
+
+    # Big piece, split, sort both halves, merge same as MergeSort
+    mid = (start + end) // 2
+    HybridMergeSort(array, start, mid)
+    HybridMergeSort(array, mid, end)
     Merge(array, start, mid, end)
