@@ -81,3 +81,18 @@ def HybridMergeSort(array, start, end):
     HybridMergeSort(array, start, mid)
     HybridMergeSort(array, mid, end)
     Merge(array, start, mid, end)
+
+# ============================================================
+#                       PROBLEM 5
+# ============================================================
+
+def BubbleSort(array, start, end):
+    n = end - start
+    for i in range(n - 1):
+        swapped = False
+        for j in range(start, end - 1 - i):
+            if array[j] > array[j + 1]:
+                array[j], array[j + 1] = array[j + 1], array[j]
+                swapped = True
+        if not swapped:
+            break
