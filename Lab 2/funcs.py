@@ -96,3 +96,16 @@ def BubbleSort(array, start, end):
                 swapped = True
         if not swapped:
             break
+
+# ============================================================
+#                       PROBLEM 6
+# ============================================================
+
+def SelectionSort(array, start, end):
+    for i in range(start, end - 1):
+        min_index = i
+        for j in range(i + 1, end):
+            if array[j] < array[min_index]:
+                min_index = j
+        array[i], array[min_index] = array[min_index], array[i]
+
