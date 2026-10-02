@@ -109,3 +109,11 @@ def SelectionSort(array, start, end):
                 min_index = j
         array[i], array[min_index] = array[min_index], array[i]
 
+# ============================================================
+#                       PROBLEM 8
+# ============================================================
+
+def ShuffleArray(array, start, end):
+    for i in range(end - 1, start, -1):
+        j = random.randint(start, i)
+        array[i], array[j] = array[j], array[i]
